@@ -116,12 +116,12 @@ if possui_duplicados:
 else:
     print("A string não possui caracteres duplicados.")
 
-#Desenvolva um programa que armazene quatro notas em uma lista e
-#que apresente a média final. Caso a média seja igual ou superior a 7,
-#apresentar a mensagem "APROVADO", caso contrário, armazenar a
-#nota da prova final e recalcular a média. Caso a nova média seja igual
-#superior a 5, apresentar a mensagem "APROVADO", caso contrário,
-#apresentar a mensagem "REPROVADO"
+# 6) Desenvolva um programa que armazene quatro notas em uma lista e
+# que apresente a média final. Caso a média seja igual ou superior a 7,
+# apresentar a mensagem "APROVADO", caso contrário, armazenar a
+# nota da prova final e recalcular a média. Caso a nova média seja igual
+# superior a 5, apresentar a mensagem "APROVADO", caso contrário,
+# apresentar a mensagem "REPROVADO"
 
 notasListas = input("Digite as quatro notas por espaço: ").split()
 
@@ -138,7 +138,7 @@ else:
   else:
     print("REPROVADO")
 
-# Faça um programa que gere um número inteiro aleatório e que peça
+# 7) Faça um programa que gere um número inteiro aleatório e que peça
 # para o usuário adivinhar, informe se o número que o usuário digitou é
 # menor ou maior que o número gerado. O jogo acaba quando o usuário
 # acertar o número gerado
@@ -158,3 +158,34 @@ while True:
   else: 
     print("Parabens, voce acertou o numero gerado")
     break
+
+# 8) Desenvolva um programa que gere uma lista de números primos 
+#    com base em um intervalo fornecido pelo usuário
+
+def verificar_primo(numero):
+    if numero < 2:
+        return False
+    for i in range(2, int(numero**0.5) + 1):
+        if numero % i == 0:
+            return False
+    return True
+
+def gerar_primos(inicio, fim):
+    primos = []
+    for numero in range(inicio, fim + 1):
+        if verificar_primo(numero):
+            primos.append(numero)
+    return primos
+
+inicio = int(input("Digite o valor inicial do intervalo: "))
+fim = int(input("Digite o valor final do intervalo: "))
+
+primos = gerar_primos(inicio, fim)
+
+print("Números primos no intervalo de", inicio, "a", fim, ":")
+if primos:
+    for primo in primos:
+        print(primo)
+else:
+    print("Nenhum número primo encontrado no intervalo.")
+    print("Nenhum numero primo encontrado no intervalo. ")
