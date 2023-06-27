@@ -189,3 +189,35 @@ if primos:
 else:
     print("Nenhum número primo encontrado no intervalo.")
     print("Nenhum numero primo encontrado no intervalo. ")
+
+
+
+import random
+
+def jogo_da_forca():
+    palavras = ['python', 'programacao', 'desafio', 'computador', 'algoritmo']
+    palavra_sorteada = random.choice(palavras)
+    palavra_mascarada = ['_'] * len(palavra_sorteada)
+    letras_erradas = []
+
+    while '_' in palavra_mascarada:
+        print('\nPalavra:', ' '.join(palavra_mascarada))
+        print('Letras erradas:', ' '.join(letras_erradas))
+
+        letra = input('Digite uma letra: ').lower()
+
+        if len(letra) != 1 or not letra.isalpha():
+            print('Por favor, digite apenas uma letra válida.')
+            continue
+
+        if letra in palavra_sorteada:
+            for i in range(len(palavra_sorteada)):
+                if palavra_sorteada[i] == letra:
+                    palavra_mascarada[i] = letra
+        else:
+            letras_erradas.append(letra)
+
+    print('\nParabéns, você acertou a palavra!')
+    print('A palavra era:', ''.join(palavra_sorteada))
+
+jogo_da_forca()
