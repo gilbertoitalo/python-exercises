@@ -197,13 +197,25 @@ import random
 def jogo_da_forca():
     palavras = ['python', 'programacao', 'desafio', 'computador', 'algoritmo']
     palavra_sorteada = random.choice(palavras)
-    palavra_mascarada = ['_'] * len(palavra_sorteada)
+    palavra_advinha = []
     letras_erradas = []
 
-    while '_' in palavra_mascarada:
+    while True:
+        palavra_mascarada = []
+        for palavra in palavra_sorteada:
+           if palavra in palavra_advinha:
+              palavra_mascarada.append(palavra)
+        else:
+           palavra_mascarada.append('_')
+    
         print('\nPalavra:', ' '.join(palavra_mascarada))
         print('Letras erradas:', ' '.join(letras_erradas))
 
+        if '_' not in palavra_mascarada:
+            print('\n Parabens, voce acertou a palavra')
+            break
+        
+    
         letra = input('Digite uma letra: ').lower()
 
         if len(letra) != 1 or not letra.isalpha():
@@ -217,6 +229,8 @@ def jogo_da_forca():
         else:
             letras_erradas.append(letra)
 
+
+    
     print('\nParabéns, você acertou a palavra!')
     print('A palavra era:', ''.join(palavra_sorteada))
 
