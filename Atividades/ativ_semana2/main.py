@@ -2,6 +2,8 @@ from traitlets.traitlets import Float
 
 import random
 
+         
+
 #1) Faça um programa que recebe uma lista de números reais e exibe o
 # seu maior elemento.
 
@@ -19,7 +21,6 @@ maior_elemento_formatado = "{:.0f}".format(maior_elemento)
 
 #Exibe maior elemento
 print("O maior elemento da lista é:", maior_elemento_formatado)
-
 
 
 
