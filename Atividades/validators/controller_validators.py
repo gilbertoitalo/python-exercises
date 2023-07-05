@@ -1,4 +1,5 @@
 import re 
+import datetime
 
 def validar_cpf(cpf):
     
@@ -63,7 +64,19 @@ def validar_email(email):
     padrao = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
     return re.match(padrao, email) is not None 
     # Verificar a existencia do dominio do email se mesmo existe
-    # Rertono do resultado da validacao 
+
+def validar_data(data):
+    try:
+        # Verifica se data está no formato correto (dd/mm/aaaa) 
+        data_format = datetime.strptime(data, "%d/%m/%Y")
+        
+        # Verifica se a data é uma data valida no calendario
+        return True
+    except ValueError:
+        return False 
+    
+data = input("Digite a data (dd/mm/aaaa): ")
+                                          
     
     
     
