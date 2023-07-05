@@ -1,3 +1,4 @@
+import re 
 
 def validar_cpf(cpf):
     
@@ -57,7 +58,14 @@ def validar_CNPJ(cnpj):
      
      return True
 
-
+def validar_email(email):
+    # Criar um expressao regular para verificar o email
+    padrao = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
+    return re.match(padrao, email) is not None 
+    # Verificar a existencia do dominio do email se mesmo existe
+    # Rertono do resultado da validacao 
+    
+    
     
     
      
