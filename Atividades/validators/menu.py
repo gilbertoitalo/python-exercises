@@ -1,11 +1,13 @@
 import controller_validators
 
 while True:
-        print("\Menu:")
-        print("1. Validar CPF"
-              "2. Validar CNPJ"
-              "3. Validar email"
-              "5. Validar Data"
+        print("\nMenu:")
+        print("1. Validar CPF",
+              "2. Validar CNPJ",
+              "3. Validar email",
+              "4. Validar Data",
+              "5. Validar Senha",
+              "6. Validar URL",
               "0. Sair")
    
         opcao = input("Escolha uma opcao")
@@ -39,6 +41,13 @@ while True:
                print("A data é valida")
             else:
                print("A data é invalida")
+          
+          case '5':
+            url = input("Digite a url: ")
+            if controller_validators.validar_url(url):
+               print("A url é valida")
+            else:
+               print("A url invalida")
           
           case '0':
             print("Encerrando o programa")
